@@ -208,7 +208,6 @@ def cosmonavt(n, a):
     brushColor("black")
     penColor("black")
     ellips1(80+70*n, 410-35*n+(55-55/a), 18/a, 13/a, 0)
-    '''oval(60+70*n+20/a, 390-35*n+30/a, 100+70*n-20/a, 420-35*n-30/a)'''
 
 cosmonavt(2, 2)
 cosmonavt(3, 5)
