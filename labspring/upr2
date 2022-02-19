@@ -8,19 +8,25 @@ print(a)
 sum = 0
 for i in range(len(a)):
     sum += a[i]
-s = sum/2
+s = sum/len(a)
 sr = 0
 for i in range(len(a)):
     sr += (a[i] - s)**2
 srpr = sr/(len(a) - 1)
-print(srpr**(1/2))
-if (len(a)/2) % 2 == 0:
-    b = (a[len(a)//4-1]+a[len(a)//4])/2
+print('Средне квадратичное отклонение = ', srpr**(1/2))
+if len(a) % 2 == 0:
+    if (len(a)/2) % 2 == 0:
+        b = (a[len(a)//4-1]+a[len(a)//4])/2
+        k = (a[(3*len(a))//4-1]+a[(3*len(a))//4])/2
+    else:
+        b = (a[len(a) // 4])
+        k = (a[(3*len(a)) // 4])
 else:
-    b = (a[len(a) // 4] / 2)
-print(float(b))
-if (len(a)/2) % 2 == 0:
-    k = (a[3*len(a)//4-1]+a[3*len(a)//4])/2
-else:
-    k = (a[3*len(a)//4]+a[3*len(a)//4+1])/2
-print(float(k))
+    if (len(a)//2 - 1) % 2 == 0:
+        b = (a[len(a) // 4 - 1] + a[len(a) // 4]) / 2
+        k = (a[(3 * len(a)) // 4] + a[(3 * len(a)) // 4 + 1]) / 2
+    else:
+        b = (a[len(a) // 4])
+        k = (a[(3*len(a)) // 4])
+
+print('Размах=', float(k-b))
