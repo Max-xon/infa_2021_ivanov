@@ -1,0 +1,40 @@
+import matplotlib.pyplot as plt
+colors = ['white', 'pink', 'red', 'green', 'brown']
+labels = ['A.', 'Б.', 'В.', 'Г.', 'В']
+
+
+
+
+
+sp = plt.subplot(231)
+
+x = [1, 2, 3, 4, 5]
+y = [16, 18, 20, 22, 24]
+sp.bar(x, y, color=colors, edgecolor='k', tick_label=labels)
+sp.grid(True, axis='y')
+
+sp = plt.subplot(232)
+
+x = [1, 2, 3, 4, 5]
+y = [20, 20, 18, 22, 20]
+sp.bar(x, y, color=colors, edgecolor='k', tick_label=labels)
+sp.grid(True, axis='y')
+
+sp = plt.subplot(233)
+x = [1, 2, 3, 4, 5]
+y = [24, 22, 20, 18, 16]
+sp.bar(x, y, color=colors, edgecolor='k', tick_label=labels)
+sp.grid(True, axis='y')
+
+sp = plt.subplot(234)
+data = [16, 18, 20, 22, 24]
+sp.pie(data, labels=labels, colors=colors)
+
+sp = plt.subplot(235)
+data = [20, 20, 18, 22, 20]
+sp.pie(data, labels=labels, colors=colors)
+
+sp = plt.subplot(236)
+data = [24, 22, 20, 18, 16]
+sp.pie(data, labels=labels, colors=colors)
+plt.show()
