@@ -123,5 +123,5 @@ root.mainloop()
 '''Запись результатов в файл'''
 
 string = t + ' ' + str(score) + '\n'
-with open('/Users/maxim/infa_2021_ivanov/lab3/results.txt', 'a') as f:
+with open('results.txt', 'a') as f:
     f.write(string)
