@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
-data = open("chromo.txt", "r").readlines()
-con = []
-res = []
-sp1 = plt.subplot(111)
-for i in range(len(data)):
-    k = data[i].split()
-    con.append(k[0])
-    res.append(k[1])
-for i in range(len(con)):
-    sp1.scatter(con[i], res[i])
 
+data = open("chromo.txt", "r").readlines()
+x = []
+y = []
+lenn = len(data)
+for i1 in range(lenn):
+    buf = data[i1].split()
+    x.append(float(buf[0]))
+    y.append(float(buf[1]))
+
+plt.scatter(x, y, s=1, alpha=0.1)
 plt.show()
