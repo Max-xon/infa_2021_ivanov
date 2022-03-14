@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = open("melting.txt", "r").readlines()
+def curve(y1):
+    y1new = []
+    for i in range(len(y1)):
+        y1new.append(y1[i] / (np.max(y1)-np.min(y1)))
+    return np.clip(y1new, 0, 1)
+x = []
+y1 = []
+y2 = []
+y3 = []
+y4 = []
+y5 = []
+lenn = len(data)
+for i1 in range(lenn):
+    buf = data[i1].split()
+    x.append(float(buf[0]))
+    y1.append(float(buf[1]))
+    y2.append(float(buf[2]))
+    y3.append(float(buf[3]))
+    y4.append(float(buf[4]))
+    y5.append(float(buf[5]))
+plt.scatter(x, curve(y1), s=1, alpha=1, edgecolors='brown')
+plt.scatter(x, curve(y2), s=1, alpha=1, edgecolors='green')
+plt.scatter(x, curve(y3), s=1, alpha=1, edgecolors='blue')
+plt.scatter(x, curve(y4), s=1, alpha=1, edgecolors='red')
+plt.scatter(x, curve(y5), s=1, alpha=1, edgecolors='yellow')
+plt.show()
