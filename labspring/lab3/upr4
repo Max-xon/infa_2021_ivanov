@@ -1,0 +1,15 @@
+import numpy as np
+
+data = list(map(int, open("ex4.txt", "r").readlines()))
+print('среднее:', str(np.mean(data)))
+print('отклонение:', np.std(data))
+
+data.sort()
+x = [i for i in np.quantile(data, [0.25, 0.5, 0.75])]
+data1 = []
+for i in data:
+    if i > (x[0] - 1.5 * (x[2] - x[0])) and i < (x[2] + 1.5 * (x[2] - x[0])):
+        data1.append(i)
+
+print('среднее 2:', str(np.mean(data1)))
+print('отклонение 2:', np.std(data1))
