@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1, 2, 3, 4, 5, 6]
+y = [1, 2.5, 2.8, 3.1, 4.5, 5.6]
+p, v = np.polyfit(x, y, deg=1, cov=True)
+b, c = np.polyfit(x, y, deg=2, cov=True)
+p1 = np.poly1d(p)
+p2 = np.poly1d(b)
+plt.plot(x, p1([1, 2, 3, 4, 5, 6]))
+plt.plot(x, p2([1, 2, 3, 4, 5, 6]))
+plt.plot(x, y, 'g', label='исходная зависимость')
+plt.xlabel(r'$x$', fontsize=14)
+plt.ylabel(r'$f(x)$', fontsize=14)
+plt.legend(loc='best', fontsize=9)
+plt.grid()
+plt.show()
