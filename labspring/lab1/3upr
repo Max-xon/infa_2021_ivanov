@@ -1,10 +1,6 @@
 import matplotlib.pyplot as plt
-colors = ['white', 'pink', 'red', 'green', 'brown']
+colors = ['blue', 'pink', 'red', 'green', 'brown']
 labels = ['A.', 'Б.', 'В.', 'Г.', 'В']
-
-
-
-
 
 sp = plt.subplot(231)
 
@@ -37,4 +33,8 @@ sp.pie(data, labels=labels, colors=colors)
 sp = plt.subplot(236)
 data = [24, 22, 20, 18, 16]
 sp.pie(data, labels=labels, colors=colors)
+
+
+
+print("столбчатые диаграммы более наглядные")
 plt.show()
