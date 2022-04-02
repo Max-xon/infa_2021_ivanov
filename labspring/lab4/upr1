@@ -1,0 +1,13 @@
+import numpy as np
+data = np.array([
+    [7, 1, 4],
+    [8, 6, 5],
+    [1, 2, 3]
+])
+y = np.sort(data, axis=0)
+print("Отсортированный:\n",y)
+x = y.T
+print("Транспонированный\n", x)
+print("По горизонатли объединили\n", np.hstack((y, x)))
+print("По вертикали\n", np.vstack((y, x)))
+print("Без оси\n", np.concatenate((y, x), axis=None))
